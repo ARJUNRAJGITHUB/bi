@@ -1,0 +1,82 @@
+Scenario: Advanced Employee Shift Management System
+
+You are working for a company that manages a large workforce distributed across multiple departments. Each department schedules its employees for various shifts, and shifts can be reassigned between departments. Your task is to create a stored procedure that handles shift adjustments and reporting.
+
+Requirements:
+
+Tables and Schema:
+
+Employees
+
+EmployeeID
+EmployeeName
+DepartmentID
+
+
+
+Departments
+
+DepartmentID
+DepartmentName
+
+
+Shifts
+
+ShiftID
+ShiftName
+StartTime
+EndTime
+
+
+EmployeeShifts
+
+EmployeeShiftID
+EmployeeID
+ShiftID
+DepartmentID
+ShiftDate
+ShiftStart
+ShiftEnd
+
+
+ShiftAssignments
+
+AssignmentID
+EmployeeID
+SourceDepartmentID
+DestinationDepartmentID
+ShiftID
+ShiftDate
+AssignmentDate
+Task:
+
+Create a stored procedure named ReassignShift that performs the following operations:
+
+Validate Inputs:
+Ensure that the employee ID, shift ID, source department ID, and destination department ID are valid. If any ID is invalid, the procedure should return an appropriate error message.
+
+Check Shift Availability:
+Verify that there is an available shift in the destination department for the specified date and time. If not, the procedure should return an error indicating no available shift.
+
+Perform Reassignment:
+Move the specified employee’s shift from the source department to the destination department. Update the EmployeeShifts table accordingly.
+
+Log Assignment:
+Insert a record into the ShiftAssignments table for the reassignment, including the assignment date and time.
+
+Update Shift Timestamps:
+Update the ShiftStart and ShiftEnd timestamps in the EmployeeShifts table for the affected shifts.
+
+Concurrency Handling:
+Implement appropriate locking mechanisms to ensure that the shift reassignment process is thread-safe and handles concurrent transactions effectively.
+
+Additional Constraints:
+
+Transaction Management:
+Ensure that the entire operation is atomic. If any step fails, roll back the entire transaction to maintain data integrity.
+
+Performance Considerations:
+Ensure the stored procedure is optimized for performance, particularly for handling large quantities of data and high concurrency.
+
+Error Handling:
+Provide detailed error messages and handle exceptions gracefully.
