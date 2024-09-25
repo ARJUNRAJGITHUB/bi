@@ -1,0 +1,6 @@
+Data Analyst Project: Blinkit Sales Performance Analysis
+Conducted a comprehensive analysis of Blinkit's sales performance, customer satisfaction, and inventory distribution using Power BI.
+
+Utilized Kaggle datasets to extract and analyze key performance indicators (KPIs).
+Developed visualizations to identify insights and optimization opportunities.
+Presented findings and recommendations to enhance business strategies.
